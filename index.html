@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="theme-color" content="#fffdf9">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Atelier Couture">
+<meta name="description" content="Dessin de mode haute couture sur tablette : silhouettes, modules de vêtement, tissus, assistance et fiche technique.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<title>Atelier Couture</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <button class="ib" id="bMenu" title="Mes croquis et réglages" aria-label="Mes croquis et réglages"></button>
+    <div class="brand"><span class="mark">AC</span><input id="pName" spellcheck="false" aria-label="Nom du croquis" value="Sans titre"></div>
+    <span id="saveState"></span>
+    <div class="grow"></div>
+    <button class="ib" id="bUndo" title="Annuler" aria-label="Annuler"></button>
+    <button class="ib" id="bRedo" title="Rétablir" aria-label="Rétablir"></button>
+    <span class="sep"></span>
+    <button class="tb" id="bSym" title="Symétrie"><i></i><span>Symétrie</span></button>
+    <button class="tb" id="bGuide" title="Repères de proportions"><i></i><span>Proportions</span></button>
+    <span class="sep"></span>
+    <button class="tb primary" id="bExport" title="Exporter"><i></i><span>Exporter</span></button>
+    <button class="ib" id="bPanel" title="Afficher / masquer le panneau" aria-label="Panneau"></button>
+  </header>
+  <nav id="tools" aria-label="Outils"></nav>
+  <main id="stage">
+    <canvas id="cv" aria-label="Feuille de dessin"></canvas>
+    <div id="selbar" hidden></div>
+    <div id="zoomCtl"><button id="bZoomOut" aria-label="Dézoomer">−</button><button id="bZoomFit" title="Ajuster à l’écran">100 %</button><button id="bZoomIn" aria-label="Zoomer">+</button></div>
+  </main>
+  <aside id="panel">
+    <div class="tabs"></div>
+    <section class="tabc" id="tab-layers" hidden></section>
+    <section class="tabc" id="tab-modules" hidden></section>
+    <section class="tabc" id="tab-atelier" hidden></section>
+    <section class="tabc" id="tab-fiche" hidden></section>
+  </aside>
+</div>
+<div id="pop" class="pop" hidden></div>
+<div id="modal" class="modal" hidden><div class="sheet"></div></div>
+<div id="toast" role="status"></div>
+<script src="js/silhouettes.js"></script>
+<script src="js/fabrics.js"></script>
+<script src="js/modules.js"></script>
+<script src="js/assist.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/export.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
